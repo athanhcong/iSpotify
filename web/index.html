@@ -16,17 +16,12 @@
 
     <div id="todoapp">
       <div class="title">
-        <h1>iSpotify</h1>
+        <h1>VOTE - ENJOY</h1>
       </div>
 
       <div class="content">
       </div>
     </div>
-
-    <div id="credits">
-      Powered by <a href="https://www.parse.com">Parse</a> using the <a href="https://www.parse.com/docs/js_guide">JavaScript SDK</a>
-    </div>
-
     <!-- Templates -->
 
 
@@ -102,32 +97,10 @@
     </script>
 
     <script type="text/template" id="item-template">
-      <li class="<%= done ? 'completed' : '' %>">
-	<div class="view">
-	  <input class="toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %>>
-	  <label class="todo-content"><%= content %></label>
-	  <button class="todo-destroy"></button>
-	</div>
-	<input class="edit" value="<%= content %>">
-      </li>
+      
     </script>
 
     <script type="text/template" id="stats-template">
-      <footer id="footer">
-	<span id="todo-count"><strong><%= remaining %></strong> <%= remaining == 1 ? 'item' : 'items' %> left</span>
-	<ul id="filters">
-	  <li>
-	    <a href="javascript:void(0)" id="all" class="selected">All</a>
-	  </li>
-	  <li>
-	    <a href="javascript:void(0)" id="active">Active</a>
-	  </li>
-	  <li>
-	    <a href="javascript:void(0)" id="completed">Completed</a>
-	  </li>
-	</ul>
-	<button id="clear-completed">Clear completed (<%= done %>)</button>
-      </footer>
     </script>
 
   </body>
