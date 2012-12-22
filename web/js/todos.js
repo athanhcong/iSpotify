@@ -7,8 +7,8 @@ $(function() {
   Parse.$ = jQuery;
 
   // Initialize Parse with your Parse application javascript keys
-  Parse.initialize("0Oq3tTp9JMvd72LOrGN25PiEq9XgVHCxo57MQbpT",
-                   "vUFy2o7nFx3eeKVlZneYMPI2MBoxT5LhWNoIWPja");
+  Parse.initialize("eCXBuOniLnxlSYcqCLCs3487hGN6AvLBAsWAc7Pj",
+                   "QDcUrZcsmTXRBqoNaCoXVaULCcO6lC009aVrdp8a");
 
   // Todo Model
   // ----------
@@ -141,6 +141,7 @@ $(function() {
 
   // The Application
   // ---------------
+  var song1, song2, song3, song4;
 
   var LogInView = Parse.View.extend({
     events: {
@@ -151,8 +152,49 @@ $(function() {
     el: ".content",
     
     initialize: function() {
+
       //_.bindAll(this, "logIn", "signUp");
-      this.render();
+
+      var Session = Parse.Object.extend("Session");
+      var query = new Parse.Query(Session);
+      query.descending("createdAt");
+      query.include("song1");
+      query.include("song2");
+                  query.include("song3");
+                        query.include("song4");
+      // query.equalTo("playerName", "Dan Stemkoski");
+
+      query.first({
+        success: function(object) {
+          // Successfully retrieved the object.
+//          alert("Successfully retrieved " + object);
+
+           song1 = object.get("song1");
+           song2 = object.get("song2");
+           song3 = object.get("song3");
+           song4 = object.get("song4");
+
+          // song1[0] = pfSong1.get("title");
+          console.log(song1);
+        },
+        error: function(error) {
+          alert("Error: " + error.code + " " + error.message);
+        }
+      });
+      // query.first({
+      //   success: function(result) {
+      //     alert("Successfully retrieved " + results.length + " scores.");
+      //     var pfSong1 = result.get("song1");
+      //     song1[0] = pfSong1.get("title");
+      //     console.log(song1);
+      //   },
+      //   error: function(error) {
+      //     alert("Error: " + error.code + " " + error.message);
+      //   }
+      // });
+
+      this.render(song1, song2, song3, song4);
+
     },
 
     // logIn: function(e) {
@@ -201,7 +243,7 @@ $(function() {
     //   return false;
     // },
 
-    render: function() {
+    render: function(song1, song2, song3, song4) {
       this.$el.html(_.template($("#login-template").html()));
       this.delegateEvents();
     }
@@ -214,6 +256,11 @@ $(function() {
     el: $("#todoapp"),
 
     initialize: function() {
+
+      // load 
+      
+
+
       this.render();
     },
 
