@@ -3,7 +3,7 @@ iSpotify
 
 ##Vote your playlist.
 
-A hackathon project of Lucas (Carousell), Bryan (Intraix), Akira (Burrple), Daniel (Burrple) and me (Babygram)
+A hackathon project of Lucas (Carousell), Bryan (Intraix), Akira (Burrple), Son (StartGrind) and me (Babygram)
 
 ## Game rule
 
