@@ -155,6 +155,9 @@ $(function() {
 
     el: ".content",
     
+
+
+    
     initialize: function() {
 
       //_.bindAll(this, "logIn", "signUp");
@@ -197,7 +200,7 @@ $(function() {
       // });
 
 
-       _.bindAll(this, "vote1", "vote2", "vote3", "vote4");
+      _.bindAll(this, "vote1", "vote2", "vote3", "vote4");
       this.render(song1, song2, song3, song4);
     },
 
