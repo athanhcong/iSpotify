@@ -144,6 +144,10 @@ $(function() {
 
   var LogInView = Parse.View.extend({
     events: {
+"submit form.login-form1": "vote1",
+"submit form.login-form2": "vote2",
+"submit form.login-form3": "vote3",
+"submit form.login-form4": "vote4"      
       // "submit form.login-form": "logIn",
       // "submit form.signup-form": "signUp"
     },
@@ -152,7 +156,28 @@ $(function() {
     
     initialize: function() {
       //_.bindAll(this, "logIn", "signUp");
+       _.bindAll(this, "vote1", "vote2", "vote3", "vote4");
       this.render();
+    },
+
+    vote1: function(e){
+      console.log("1");
+      return false;
+    },
+
+    vote2: function(e){
+      console.log("2");
+      return false;
+    },
+
+    vote3: function(e){
+      console.log("3");
+      return false;
+    },
+
+    vote4: function(e){
+      console.log("4");
+      return false;      
     },
 
     // logIn: function(e) {
