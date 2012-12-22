@@ -203,21 +203,30 @@ $(function() {
 
     vote1: function(e){
       console.log("1");
+
+      song1.increment("score");
+      song1.save();
       return false;
     },
 
     vote2: function(e){
       console.log("2");
+      song2.increment("score");
+      song2.save();      
       return false;
     },
 
     vote3: function(e){
       console.log("3");
+      song3.increment("score");
+      song3.save();      
       return false;
     },
 
     vote4: function(e){
       console.log("4");
+      song4.increment("score");
+      song4.save();      
       return false;      
     },
 
@@ -282,8 +291,6 @@ $(function() {
     initialize: function() {
 
       // load 
-      
-
 
       this.render();
     },
